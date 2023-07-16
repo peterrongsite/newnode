@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QR Code</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+  <div id="qrcode"></div>
+
+  <script>
+    $(document).ready(() => {
+      const qrCodeValue = "<%= qrCodeValue %>";
+      const qrCode = new QRCode(document.getElementById("qrcode"), {
+        text: qrCodeValue,
+        width: 128,
+        height: 128
+      });
+    });
+  </script>
+</body>
+</html>
